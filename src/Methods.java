@@ -6,10 +6,12 @@ public class Methods {
         double result = a + b;
         System.out.println("Result : " + result);
         return result;
+
     }static double subtraction(double a, double b){
         double result = a - b;
         System.out.println("Result : " + result);
         return result;
+
     }static double multiplication(double a,double b){
         double result = a * b;
         System.out.println("Result : " + result);

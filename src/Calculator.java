@@ -2,53 +2,60 @@ import java.util.Scanner;
 
 public class Calculator {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         int select;
 
         String menu = "Please select the action you want to perform below.\n"
-                + "1- Sum Up\n"
-                + "2- Subtraction\n"
-                + "3- Multiplication\n"
-                + "4- Division\n"
-                + "5- Exponential Numbers\n"
-                + "6- Mod Operations\n"
-                + "7- Rectangle Area and Perimeter\n"
-                + "0- Quit\n";
+                    + "1- Sum Up\n"
+                    + "2- Subtraction\n"
+                    + "3- Multiplication\n"
+                    + "4- Division\n"
+                    + "5- Exponential Numbers\n"
+                    + "6- Mod Operations\n"
+                    + "7- Rectangle Area and Perimeter\n"
+                    + "0- Quit\n";
+
         System.out.println(menu);
+
         while (true){
-            System.out.println("Bir işlem seçiniz : ");
-            seçim = scanner.nextInt();
-            if (seçim == 0){
+            System.out.println("Select a function : ");
+            select = scanner.nextInt();
+
+            if (select == 0){
                 break;
-            } else if (seçim < 0 || seçim > 7) {
-                System.out.println("Geçersiz bir işlem girdiniz");
+
+            } else if (select < 0 || select > 7) {
+                System.out.println("You entered an invalid function!");
+
             }else {
-                System.out.print("1. sayı :");
+                System.out.print("1. number :");
                 double a = scanner.nextDouble();
-                System.out.print("2. sayı :");
+
+                System.out.print("2. number :");
                 double b = scanner.nextDouble();
 
-                switch (seçim){
+                switch (select){
                     case 1:
-                        method.toplama(a,b);
+                        Methods.sumUp(a,b);
                         break;
                     case 2:
-                        method.çıkarma(a,b);
+                        Methods.subtraction(a,b);
                         break;
                     case 3:
-                        method.çarpma(a,b);
+                        Methods.multiplication(a,b);
                         break;
                     case 4:
-                        method.bölme(a,b);
+                        Methods.division(a,b);
                         break;
                     case 5:
-                        method.üslüsayı(a,b);
+                        Methods.exponentialNumbers(a,b);
                         break;
                     case 6:
-                        method.mod(a,b);
+                        Methods.mod(a,b);
                         break;
                     case 7:
-                        method.dörtgen(a,b);
+                        Methods.square(a,b);
                         break;
                 }
             }
